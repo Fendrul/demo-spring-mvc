@@ -1,0 +1,36 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form th:action="@{/room/update/{num}(num=${room.numRoom})}" method="post" th:object="${room}">
+
+        <div>
+            <label for="in-num">numéro</label><br>
+            <input type="number" id="in-num" th:field="*{numRoom}">
+        </div>
+
+        <div>
+            <label for="in-bed-simple">nombre de lits simples</label><br>
+            <input type="number" id="in-bed-simple" th:field="*{nbrSimpleBed}">
+        </div>
+
+        <div>
+            <label for="in-bed-double">nombre de lits doubles</label><br>
+            <input type="number" id="in-bed-double" th:field="*{nbrDoubleBed}">
+        </div>
+
+        <div>
+            <label for="in-bed-size">taille</label><br>
+            <input type="number" id="in-bed-size" th:field="*{size}">
+        </div>
+
+        <button type="submit">Envoyer</button>
+    </form>
+    
+</body>
+</html>

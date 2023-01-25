@@ -1,0 +1,29 @@
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Document</title>
+    <link rel="styleSheet" href="/css/main.css">
+</head>
+<body>
+
+
+<div th:object="${hotel}">
+    <h1>Vue de l'hôtel <span th:text="*{nomHotel}"></span> </h1>
+    <p>numéro de l'hotel : <span th:text="*{ID}"></span> </p>
+    <p>adresse : <span th:text="*{adresse}"></span> </p>
+    <p>nombre d'étoiles : <span th:text="*{nbrEtoiles}"></span> </p>
+    <!--    <p>taille de la chambre : <span th:text="*{size}"></span> </p>-->
+
+    <h3>Chambres : </h3>
+
+    <ul>
+        <li th:each="room : *{listRooms}" th:object="${room}">
+            <p>numéro de la chambre : <span th:text="*{numRoom}"></span> </p>
+            <p th:if="*{nbrSimpleBed} > 0">nombre de lits simples : <span th:text="*{nbrSimpleBed}"></span> </p>
+            <p th:if="*{nbrDoubleBed} > 0">nombre de lits doubles : <span th:text="*{nbrDoubleBed}"></span> </p>
+            <p>taille de la chambre : <span th:text="*{size}"></span> </p>
+        </li>
+    </ul>
+</div>
+</body>
+</html>

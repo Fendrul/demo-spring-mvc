@@ -1,0 +1,5 @@
+Spring:
+  datasource:
+
+server:
+  localhost: 8080

@@ -1,0 +1,26 @@
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+<h1>Liste des hôtels</h1>
+
+<ul>
+    <li th:each="hotel : ${hotels}" th:object="${hotel}">
+        <p th:text="|numéro : *{ID},
+                    nom : *{nomHotel},
+                    adresse : *{adresse}
+                    nombre d'étoiles : *{nbrEtoiles}
+                    Nom du réceptionniste : *{nomReceptionniste}|">
+            Données des hotels
+        </p>
+        <a th:href="@{/hotel/{num}(num=*{ID})}">
+            <button>détails</button>
+        </a>
+    </li>
+</ul>
+
+</body>
+</html>

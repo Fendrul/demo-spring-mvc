@@ -1,0 +1,35 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form th:action="@{/hotel/add}" method="post" th:object="${hotelForm}">
+        <div>
+            <label for="in-nom">Nom</label>
+            <input type="text" id="in-nom" th:field="*{nomHotel}">
+        </div>
+    
+        <div>
+            <label for="in-adresse">Adresse</label>
+            <input type="text" id="in-adresse" th:field="*{adresse}">
+        </div>
+    
+        <div>
+            <label for="in-nomReceptionniste">Nom du réceptionniste</label>
+            <input type="text" id="in-nomReceptionniste" th:field="*{nomReceptionniste}">
+        </div>
+    
+        <div>
+            <label for="in-nbrEtoiles">Nombre d'étoiles</label>
+            <input type="text" id="in-nbrEtoiles" th:field="*{nbrEtoiles}">
+        </div>
+
+        <button type="submit">Envoyer</button>
+    </form>
+    
+</body>
+</html>

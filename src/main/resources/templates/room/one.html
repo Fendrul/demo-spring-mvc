@@ -1,0 +1,22 @@
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Document</title>
+    <link rel="styleSheet" href="/css/main.css">
+</head>
+<body>
+
+<h1>Liste des chambres</h1>
+
+    <div th:object="${room}">
+        <p>numéro de la chambre : <span th:text="*{numRoom}"></span> </p>
+        <p th:if="*{nbrSimpleBed} > 0">nombre de lits simples : <span th:text="*{nbrSimpleBed}"></span> </p>
+        <p th:if="*{nbrDoubleBed} > 0">nombre de lits doubles : <span th:text="*{nbrDoubleBed}"></span> </p>
+        <p>taille de la chambre : <span th:text="*{size}" th:class="*{size} > 20 ? 'red'"></span> </p>
+    </div>
+
+
+    <script src="/js/script.js"></script>
+
+</body>
+</html>

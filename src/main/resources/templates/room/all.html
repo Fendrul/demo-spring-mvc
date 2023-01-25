@@ -1,0 +1,24 @@
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+<h1>Liste des chambres</h1>
+
+<ul>
+    <li th:each="room : ${rooms}" th:object="${room}">données de la chambre
+        <p th:text="|numéro : *{numRoom},
+                    lits simples : *{nbrSimpleBed},
+                    lits doubles: *{nbrDoubleBed}|">
+            Données sur une chambre
+        </p>
+        <a th:href="@{/room/{num}(num=*{numRoom})}">
+            <button>détails</button>
+        </a>
+    </li>
+</ul>
+
+</body>
+</html>
